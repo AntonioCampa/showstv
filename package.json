@@ -1,0 +1,29 @@
+{
+  "name": "showstv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioCampa/showstv.git"
+  },
+  "author": "Antonio Campa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntonioCampa/showstv/issues"
+  },
+  "homepage": "https://github.com/AntonioCampa/showstv#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bower": "0.0.13",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}
