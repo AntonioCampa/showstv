@@ -39,12 +39,12 @@ gulp.task("server", function() {
     }));
 });
 
-gulp.task("bower", function() {
-    return bower({
-      directory: config.bower.main
-    })
-    .pipe(gulp.dest(config.bower.output));
-});
+// gulp.task("bower", function() {
+//     return bower({
+//       directory: config.bower.main
+//     })
+//     .pipe(gulp.dest(config.bower.output));
+// });
 
 
 gulp.task("build:css", function() {
@@ -56,7 +56,7 @@ gulp.task("build:css", function() {
 gulp.task("build:js", function() {
   return gulp.src([config.js.main, config.js.watch])
     .pipe(sourcemaps.init())
-    .pipe(babel({preset: ["es2015"]}))
+    .pipe(babel({presets: ["es2015"]}))
     .pipe(concat("final.js"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(config.js.output));

@@ -1,0 +1,11 @@
+body {
+  font-family: serif;
+  color: blue;
+  margin: 0; }
+
+header {
+  background-color: #ffffff;
+  padding: 15px; }
+  header .logo {
+    line-height: 0;
+    display: inline-block; }
