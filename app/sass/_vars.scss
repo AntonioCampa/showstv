@@ -1,2 +1,10 @@
 $primary: #7F9AD3;
-$primary-lighter: lighten($primary, 30%);
+$primary-lighter: lighten($primary, 20%);
+$secondary: #68557F;
+$secondary-ligther: lighten($secondary, 30%);
+
+//scren-size
+$phone: 400px;
+$tablet: 1000px;
+$desktop: 1920px;
+$phablet: 600px;

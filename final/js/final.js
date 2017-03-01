@@ -6,13 +6,38 @@ var titles = $.ajax({
   type: "get",
   dataType: "json",
   success: function success(data) {
-    console.log(data);
+    primaryShow(data[Math.floor(Math.random() * data.length)]);
     runGrid(data);
   },
   error: function error() {
     console.log("error");
   }
 });
+
+function primaryShow(title) {
+  var template = "",
+      $node = $("#primaryShow"),
+      ajaxTemplate = $.ajax({
+    url: "views/coverprime/template.html",
+    cache: false,
+    type: "get",
+    dataType: "html",
+    success: function success(data) {
+      template = data;
+    }
+  });
+
+  $.when(ajaxTemplate).done(function () {
+    var genres = "",
+        name = title;
+    for (var i = 0; i < title.genres.length; i++) {
+      genres += title.genres[i] + ", ";
+    }
+    ajaxTemplate = template;
+    ajaxTemplate = ajaxTemplate.replace("##title##", title.name).replace("##score##", title.rating.average).replace("##cover##", title.image.medium).replace("##genres##", genres).replace("##coverprime##", title.image.original).replace("##description##", title.summary).replace("##runtime##", title.runtime).replace("##lang##", title.language);
+    $node.append(ajaxTemplate);
+  });
+}
 
 function runGrid(titles) {
   var template = "",

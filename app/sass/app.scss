@@ -1,8 +1,10 @@
 @import "vars";
-
+@import "mixins";
 body{
   font-family: serif;
   color: blue;
   margin: 0;
 }
 @import "header";
+@import "grid";
+@import "primaryShow";

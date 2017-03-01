@@ -1,0 +1,39 @@
+.grid{
+  position: relative;
+
+  h2{
+    margin: 16px;
+  }
+
+  #listShows {
+    list-style: none;
+    padding: 0 8px;
+    margin: 0;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+
+    .show {
+      max-width: 33.3%;
+      padding: 0 8px 8px;
+      box-sizing: border-box;
+
+      @media (min-width: $phone){
+        max-width: 120px;
+      }
+
+      @media (min-width: $tablet){
+        max-width: 16.6%
+      }
+
+      @media (min-width: $desktop){
+        max-width: 10%;
+      }
+
+      .cover img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

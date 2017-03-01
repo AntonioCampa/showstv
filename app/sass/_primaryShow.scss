@@ -1,0 +1,107 @@
+#primaryShow {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+  @media (max-width: $phablet){
+    height: 100vh;
+  }
+
+  .primary-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      object-position: 50%;
+      width: 100%;
+      filter: blur(5px);
+    }
+  }
+
+  .primary-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($secondary, .50);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    //flex-flow: wrap;
+    //align-items: flex-start;
+
+    .cover{
+      @extend %coverContainers;
+      text-align: center;
+      @media (max-width: $tablet){
+        width: 25%;
+        height: auto;
+      }
+      @media (min-width: $phablet){
+        width: 30%;
+      }
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        @media (max-width: $tablet){
+          object-position: top;
+        }
+      }
+    }
+
+    .features {
+      @extend %coverContainers;
+      list-style: none;
+      color: aquamarine;
+      margin: 0;
+      padding: 0 8px;
+      font-size: 14px;
+      @media (max-width: $tablet){
+        width: 50%;
+        height: auto;
+      }
+      @media (min-width: $phablet){
+        width: 70%;
+      }
+
+      li {
+        margin-bottom: 6px;
+
+        &:first-child {
+          font-size: 30px;
+          font-weight: bold;
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    .description {
+      @extend %coverContainers;
+      overflow: hidden;
+
+      @media (max-width: $tablet){
+        width: 100%;
+        height: auto;
+      }
+      @media (min-width: $phablet){
+        width: 70%;
+      }
+
+      p {
+        margin: 0;
+        padding: 0 8px;
+        color: whitesmoke;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+}
